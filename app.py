@@ -92,19 +92,6 @@ def load_geographic_data():
     # Load lakes
     lakes_df = pd.read_csv(os.path.join(data_path, 'OK_lakes_simple.csv'), 
                            header=None, names=['x', 'y', 'lake_id', 'point_id'])
-    try:
-        lakes_df, calderas_df, stations_df = load_geographic_data()
-        print(f"Data loaded successfully! Lakes: {len(lakes_df)}, Calderas: {len(calderas_df)}, Stations: {len(stations_df)}")
-    except Exception as e:
-        print(f"ERROR LOADING DATA: {e}")
-        import traceback
-        traceback.print_exc()
-        # Create empty dataframes so app doesn't crash
-        import pandas as pd
-        lakes_df = pd.DataFrame(columns=['x', 'y', 'lake_id', 'point_id'])
-        calderas_df = pd.DataFrame(columns=['x', 'y', 'caldera_id', 'point_id'])
-        stations_df = pd.DataFrame(columns=['x', 'y', 'name'])
-
     # Load calderas
     calderas_df = pd.read_csv(os.path.join(data_path, 'OK_calderas_simple.csv'),
                               header=None, names=['x', 'y', 'caldera_id', 'point_id'])
