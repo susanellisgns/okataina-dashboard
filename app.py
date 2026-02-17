@@ -721,5 +721,5 @@ def calculate_and_plot(source_type, x0, y0, z0, n_intervals, radius, pressure):
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 8050))
-    debug = os.environ.get('DEBUG', 'True').lower() == 'true'
+    debug = os.environ.get('DEBUG', 'False').lower() == 'true'
     app.run(debug=debug, host='0.0.0.0', port=port)
