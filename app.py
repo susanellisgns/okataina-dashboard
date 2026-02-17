@@ -86,7 +86,8 @@ def mctigue2D(x0, y0, z0, P_G, a, nu, x, y):
 # Load geographic data
 def load_geographic_data():
     """Load lakes, calderas, and GPS stations"""
-    data_path = './data'
+    #data_path = './data'
+    data_path = os.path.join(os.path.dirname(__file__), 'data')
     
     # Load lakes
     lakes_df = pd.read_csv(os.path.join(data_path, 'OK_lakes_simple.csv'), 
