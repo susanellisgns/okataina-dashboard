@@ -92,7 +92,7 @@ def load_geographic_data():
     # Load lakes
     lakes_df = pd.read_csv(os.path.join(data_path, 'OK_lakes_simple.csv'), 
                            header=None, names=['x', 'y', 'lake_id', 'point_id'])
-    try:
+try:
     lakes_df, calderas_df, stations_df = load_geographic_data()
     print(f"Data loaded successfully! Lakes: {len(lakes_df)}, Calderas: {len(calderas_df)}, Stations: {len(stations_df)}")
 except Exception as e:
