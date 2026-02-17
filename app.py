@@ -274,7 +274,7 @@ app.layout = html.Div([
             # Interval component to trigger updates periodically
             dcc.Interval(
                 id='update-interval',
-                interval=500,  # Update every 500ms
+                interval=2000,  # Update every 2000ms
                 n_intervals=0
             ),
             
